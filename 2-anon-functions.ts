@@ -7,7 +7,7 @@ const getEvenNumbers1 = () => numbers.filter(num => num % 2 === 0);
 
 
 // Вне контекста (указываем тип входных параметров)
-const even = (num: number)=> num % 2 === 0
+const even = (num: number) => num % 2 === 0
 const getEvenNumbers = numbers.filter(even);
 
 
