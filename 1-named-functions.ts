@@ -7,15 +7,22 @@
 // Получается, функция заменяет первые 12 символов на звездочки. 
 // Количество звездочек регулируется вторым необязательным параметром. Значение по умолчанию — 4.
 
+// Вариант через padStart() и slice()
+
+function getHiddenCard2(cardNumber: string, hiddenPartLength = 4): string {
+  const visibleDigitsLine = cardNumber.slice(-4);
+  return visibleDigitsLine.padStart(hiddenPartLength + 4, '*');
+}
+
+// Вариант через преобразование в массив
 function getHiddenCard(cardId: string, starCount = 4): string {
-  const COUNT_CHANGED_CHARS = 12;
+  const changedCharsCount = cardId.length - 4;
 
   const cardArray = cardId.split('');
 
   const stars = "*".repeat(starCount);
 
-  cardArray.splice(0, COUNT_CHANGED_CHARS, stars);
+  cardArray.splice(0, changedCharsCount, stars);
   
   return cardArray.join('')
 }
-
