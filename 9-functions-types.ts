@@ -10,6 +10,6 @@
 // Анонимная функция, которая принимает на вход число и возвращает логическое значение
 
 
-const filter = (numbers: number[], callback: () => boolean) => {
+const filter = (numbers: number[], callback: (n: number) => boolean) => {
     return numbers.filter(callback)
 }
