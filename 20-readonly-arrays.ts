@@ -32,5 +32,9 @@
 const reverse = (nums: readonly number[]): number[] => {
     const total: number[] = []
     nums.forEach(num => total.unshift(num))
+    return total
+}
 
+function reverse1(coll: readonly number[]): number[] {
+  return coll.map((_, index) => coll[coll.length - 1 - index]);
 }
