@@ -62,7 +62,6 @@
 
 type Point = [number, number, number]
 
-const isTheSamePoint = (point1: Point, point2: Point): boolean => {
-
-    return point1[0] === point2[0] && point1[1] === point2[1]
+function isTheSamePoint(p1: Point, p2: Point): boolean {
+  return p1.every((el, i) => el === p2[i]);
 }
